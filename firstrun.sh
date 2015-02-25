@@ -32,7 +32,7 @@ fi
 
 # use the default plexWatchWeb config.php file if it doesn't already exist
 if [ ! -f /plexWatch/config.php ]; then
-  echo "Using default plexWatchWeb config.php"
+  echo "Using default plexWWWatch config.php"
   cp /tmp/config.php /plexWatch/config.php
   chmod a+w /plexWatch/config.php
 fi

@@ -1,4 +1,4 @@
-This is a Dockerfile for plexWatch (https://github.com/ljunkie/plexWatch) and plexWatchWeb (https://github.com/ecleese/plexWatchWeb)
+This is a Dockerfile for plexWatch (https://github.com/ljunkie/plexWatch) and plexWWWatch (https://github.com/Gyran/PlexWWWatch)
 
 Prerequisites
 ----------
@@ -20,15 +20,15 @@ New Installation Instructions
 * Start watching a movie in Plex, leave it running
 * Run the docker in host mode:
 ```
-docker run -d --net="host" --name="plexWatch" -v "/path/to/plexWatch/":"/plexWatch":rw -v "/path/to/plex/logs/":"/logs":ro -v /etc/localtime:/etc/localtime:ro -p 8080:8080 needo/plexwatch
+docker run -d --net="host" --name="plexWWWatch" -v "/path/to/plexWWWatch/":"/plexWWWatch":rw -v "/path/to/plex/logs/":"/logs":ro -v /etc/localtime:/etc/localtime:ro -p 8080:8080 eroz/plexWWWatch
 ```
 Where: 
-   * plexWatch:
-      - the path in the container should be "/plexWatch"
-      - the path on the array should be something like "/mnt/cache/cache_only/plexWatch/"
+   * plexWWWatch:
+      - the path in the container should be "/plexWWWatch"
+      - the path on the array should be something like "/mnt/cache/cache_only/plexWWWatch/"
         (this directory will contain the config.pl and config.php files you may need to edit)
       - the container needs read/write access
-      - example:  "/mnt/cache/cache_only/plexWatch/":"/plexWatch":rw
+      - example:  "/mnt/cache/cache_only/plexWWWatch/":"/plexWWWatch":rw
 
    * logs:
       - the path in the container should be "/logs"
@@ -38,9 +38,9 @@ Where:
       - example:  "/mnt/cache/appdata/Plex/Library/Application Support/Plex Media Server/Logs/":"/logs":ro
 
 
-* Try it out: http://server:8080/plexWatch/
+* Try it out: http://server:8080/PlexWWWatch/public
 
-If all goes well, plexWatchWeb will load and show you the movie that is currently playing in Plex.
+If all goes well, plexWWWatch will load and show you the movie that is currently playing in Plex.
 
 If the container stops immediately or you get an error message, see the "Troubleshooting" section.
 
@@ -55,7 +55,7 @@ The easiest way to setup the plexWatch docker is to run it in host mode.  But if
 
 Then run the plexWatch docker in bridge mode:
 ```
-docker run -d --net="bridge" --name="plexWatch" -v "/path/to/plexWatch/":"/plexWatch":rw -v "/path/to/plex/logs/":"/logs":ro -v /etc/localtime:/etc/localtime:ro -p 8080:8080 needo/plexwatch
+docker run -d --net="bridge" --name="plexWWWatch" -v "/path/to/plexWWWatch/":"/plexWWWatch":rw -v "/path/to/plex/logs/":"/logs":ro -v /etc/localtime:/etc/localtime:ro -p 8080:8080 eroz/plexWWWatch
 ```
 
 Note that Plex itself should still be run in host mode.

@@ -6,7 +6,7 @@ if [ -z "$EDGE" ]; then
 else
   apt-get install -qy git
   rm -rf /var/www/html/plexWatch
-  git clone https://github.com/ecleese/plexWatchWeb.git /var/www/html/plexWatch
+  git clone https://github.com/Gyran/PlexWWWatch.git /var/www/html/plexWatch
   chown -R www-data:www-data /var/www/html/plexWatch
   ln -s /plexWatch/config.php /var/www/html/plexWatch/config/config.php
 fi

@@ -84,11 +84,11 @@ Common errors:
 * If the log shows: "AH00558: apache2: Could not reliably determine the server's fully qualified domain name..."
    - It is safe to ignore this message
 
-* If plexWatchWeb loads, but gives a "Failed to access plexWatch database" error message:
+* If plexWWWatch loads, but gives a "Failed to access plexWatch database" error message:
    - Login to Plex and go to Settings -> Server -> Connect.  Verify that the account you are signed in as has a Plex Pass.
-   - Start watching a movie, wait a few minutes, then try accessing plexWatchWeb again.
+   - Start watching a movie, wait a few minutes, then try accessing plexWWWatch again.
 
-* If plexWatchWeb loads, but gives a "Failed to access Plex Media Server" error message:
+* If plexWWWatch loads, but gives a "Failed to access Plex Media Server" error message:
    - Ensure the Plex docker is running(!) and is in host mode
    - Review the "Host mode vs Bridge mode" section.  It is likely that the wrong server ip or wrong username/pasword is specified in the config files.
      The same details need to be provided in both config.pl and config.php.

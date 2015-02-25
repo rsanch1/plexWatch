@@ -23,7 +23,7 @@ RUN crontab /root/crons.conf
 RUN cron
 
 # Install plexWatchWeb Dependencies
-RUN apt-get install -qy apache2 libapache2-mod-php5 wget php5-sqlite php5-curl
+RUN apt-get install -qy apache2 libapache2-mod-php5 wget php5-sqlite php5-curl php_pdo_sqlite
 
 # Enable PHP
 RUN a2enmod php5

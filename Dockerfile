@@ -42,7 +42,7 @@ RUN tar -C /var/www/html/plexWatch -xvf /tmp/v0.1.tar.gz --strip-components 1
 RUN chown -R www-data:www-data /var/www/html/plexWatch
 
 # Set plexWWWatch to use config.php in /plexWatch
-RUN ln -s /plexWatch/config.php /var/www/html/plexWatch/config/config.php
+#RUN ln -s /plexWatch/config.php /var/www/html/plexWatch/config/config.php
 
 # Manually set the apache environment variables in order to get apache to work immediately.
 RUN echo www-data > /etc/container_environment/APACHE_RUN_USER

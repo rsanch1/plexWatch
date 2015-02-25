@@ -35,14 +35,14 @@ RUN rm -f /var/www/html/index.html
 ADD apache-config.conf /etc/apache2/sites-available/000-default.conf
 ADD ports.conf /etc/apache2/ports.conf
 
-# Install plexWatchWeb v1.5.4.2
-RUN mkdir -p /var/www/html/plexWatch
-RUN wget -P /tmp/ https://github.com/ecleese/plexWatchWeb/archive/v1.5.4.2.tar.gz
-RUN tar -C /var/www/html/plexWatch -xvf /tmp/v1.5.4.2.tar.gz --strip-components 1
-RUN chown -R www-data:www-data /var/www/html/plexWatch
+# Install PlexWWWatch v0.1
+RUN mkdir -p /var/www/html/plexWWWatch
+RUN wget -P /tmp/ https://github.com/Gyran/PlexWWWatch/archive/v0.1.tar.gz
+RUN tar -C /var/www/html/plexWWWatch -xvf /tmp/v0.1.tar.gz --strip-components 1
+RUN chown -R www-data:www-data /var/www/html/plexWWWatch
 
-# Set plexWatchWeb to use config.php in /plexWatch
-RUN ln -s /plexWatch/config.php /var/www/html/plexWatch/config/config.php
+# Set plexWWWatch to use config.php in /plexWatch
+RUN ln -s /plexWatch/config.php /var/www/html/plexWWWatch/config/config.php
 
 # Manually set the apache environment variables in order to get apache to work immediately.
 RUN echo www-data > /etc/container_environment/APACHE_RUN_USER
@@ -54,7 +54,7 @@ RUN echo /var/run/apache2.pid > /etc/container_environment/APACHE_PID_FILE
 EXPOSE 8080
 
 # The plexWatch directory. Where the binary, config, and database is
-VOLUME /plexWatch
+VOLUME /plexWWWatch
 
 # Plex Logfile directory for tracking IP addresses
 VOLUME /logs

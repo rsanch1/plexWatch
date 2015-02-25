@@ -22,7 +22,7 @@ RUN crontab /root/crons.conf
 # Start cron
 RUN cron
 
-# Install plexWatchWeb Dependencies
+# Install plexWWWatch Dependencies
 RUN apt-get install -qy apache2 libapache2-mod-php5 wget php5-sqlite php5-curl php_pdo_sqlite
 
 # Enable PHP
@@ -36,13 +36,13 @@ ADD apache-config.conf /etc/apache2/sites-available/000-default.conf
 ADD ports.conf /etc/apache2/ports.conf
 
 # Install PlexWWWatch v0.1
-RUN mkdir -p /var/www/html/plexWWWatch
+RUN mkdir -p /var/www/html/plexWatch
 RUN wget -P /tmp/ https://github.com/Gyran/PlexWWWatch/archive/v0.1.tar.gz
-RUN tar -C /var/www/html/plexWWWatch -xvf /tmp/v0.1.tar.gz --strip-components 1
-RUN chown -R www-data:www-data /var/www/html/plexWWWatch
+RUN tar -C /var/www/html/plexWatch -xvf /tmp/v0.1.tar.gz --strip-components 1
+RUN chown -R www-data:www-data /var/www/html/plexWatch
 
 # Set plexWWWatch to use config.php in /plexWatch
-RUN ln -s /plexWatch/config.php /var/www/html/plexWWWatch/config/config.php
+RUN ln -s /plexWatch/config.php /var/www/html/plexWatch/config/config.php
 
 # Manually set the apache environment variables in order to get apache to work immediately.
 RUN echo www-data > /etc/container_environment/APACHE_RUN_USER
